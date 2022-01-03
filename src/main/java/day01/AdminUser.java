@@ -16,16 +16,6 @@ public class AdminUser implements User {
     }
 
     @Override
-    public String getUserPassword() {
-        return password;
-    }
-
-    @Override
-    public String getEmail() {
-        return email;
-    }
-
-    @Override
     public String getPassword() {
         return "*".repeat(password.length());
     }
