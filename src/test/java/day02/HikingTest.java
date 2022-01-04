@@ -20,11 +20,12 @@ class HikingTest {
 
     @Test
     void getMinusElevationDataTest() {
-        List<Tour> tourOne = (List<Tour>) new Tour(1,2,3.0);
-        List<Tour> tourTw = (List<Tour>) new Tour(1,2,3.0);
-        List<Tour> tourTh = (List<Tour>) new Tour(1,2,3.0);
+        Tour tourOne = new Tour(1, 2, 3.0);
+        Tour tourTw = new Tour(2, 4, 6.0);
+        Tour tourTh = new Tour(3, 5, 7.0);
+        List<Tour> tours = new ArrayList<>(Arrays.asList(tourOne, tourTw, tourTh);
 
-        assertArrayEquals(200.0, hiking.getPlusElevation(tourOne, tourTw, tourTh));
+        assertArrayEquals(200.0, hiking.getPlusElevation(tours);
     }
 
     @Test
