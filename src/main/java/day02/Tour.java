@@ -1,8 +1,5 @@
 package day02;
 
-import java.util.Collections;
-import java.util.List;
-
 public class Tour {
 
     private double GPSLat;
