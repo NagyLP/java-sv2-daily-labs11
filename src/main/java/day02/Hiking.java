@@ -6,7 +6,7 @@ public class Hiking {
 
     public double getPlusElevation(List<Tour> tours) {
         if (tours == null || tours.size() < 2) {
-            throw new IllegalArgumentException("Input data Error.");
+            throw new IllegalArgumentException("Input data error.");
         }
 
         double sumHeight = 0;
