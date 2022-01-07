@@ -1,26 +1,61 @@
 package day05;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Lottery {
 
-    public static void main(String[] args) {
+    private final int totalPiecesNumbers;
+    private final int pullVolumen;
+    private final Random random;
 
-        int[] lottery = new int[5];
-        int randomNum;
+    public Lottery(int totalNumbers, int numberOfDraws) {
+        this.totalPiecesNumbers = totalNumbers;
+        this.pullVolumen = numberOfDraws;
+        random = new Random();
+    }
 
-        for (int i = 0; i < 5; i++) {
-            randomNum = (int) (Math.random() * 90);
-            for (int k = 0; k < i; k++) {
-                if (lottery[i] == randomNum)
-                {
-                    randomNum = (int) (Math.random() * 90);
-                }
+    public int getTotalPiecesNumbers() {
+        return totalPiecesNumbers;
+    }
 
+    public int getPullVolumen() {
+        return pullVolumen;
+    }
+
+    public List<Integer> draw() {
+        List<Integer> numbers = new ArrayList<>();
+        while (numbers.size() < pullVolumen) {
+            int pull = random.nextInt(totalPiecesNumbers) + 1;
+            if (!numbers.contains(pull)) {
+                numbers.add(pull);
             }
-            lottery[i] = randomNum;
         }
+        return numbers;
 
-        for (int i = 0; i < lottery.length; i++)
-            System.out.print(lottery[i] + " ");
 
+
+
+//    public static void main(String[] args) {
+//
+//        int[] lottery = new int[5];
+//        int randomNum;
+//
+//        for (int i = 0; i < 5; i++) {
+//            randomNum = (int) (Math.random() * 90);
+//            for (int k = 0; k < i; k++) {
+//                if (lottery[i] == randomNum)
+//                {
+//                    randomNum = (int) (Math.random() * 90);
+//                }
+//
+//            }
+//            lottery[i] = randomNum;
+//        }
+//
+//        for (int i = 0; i < lottery.length; i++)
+//            System.out.print(lottery[i] + " ");
+//    }
     }
 }
