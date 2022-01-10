@@ -2,27 +2,23 @@ package day04;
 
 import java.time.LocalDate;
 
-public abstract class Product {
+public class Product extends  WebShopItem{
 
-    private String name;
-    private int price;
-    private LocalDate experationDate;
+    public static final int DEFAULT_GUARANTEE = 3;
 
-    public Product(String name, int price, LocalDate experationDate) {
-        this.name = name;
-        this.price = price;
-        this.experationDate = experationDate;
+    public Product(String name, int price) {
+        super(name, price);
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public WebShopItem copy() {
+        Product product = new Product(this.getName(),this.getPrice());
+        product.setExpirationDate(LocalDate.now().plusMonths(DEFAULT_EXPIRE));
+
+        return product;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public LocalDate getExperationDate() {
-        return experationDate;
+    public void addExtraGuarantee(int years){
+        setExpirationDate(LocalDate.now().plusYears(years));
     }
 }

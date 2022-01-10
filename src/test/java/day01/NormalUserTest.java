@@ -10,7 +10,7 @@ class NormalUserTest {
     void testNormalUserGetters() {
         User testUser = new NormalUser("123@gmail.com", "0000");
 
-        assertEquals("123@gmail.com", testUser.getUserEmail());
+        assertEquals("123@gmail.com", testUser.getEmail());
         assertEquals("****", testUser.getPassword());
     }
 }

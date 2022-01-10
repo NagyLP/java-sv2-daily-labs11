@@ -1,6 +1,7 @@
 package day01;
 
-public class AdminUser implements User {
+public class AdminUser implements User{
+
 
     private String email;
     private String password;
@@ -11,7 +12,7 @@ public class AdminUser implements User {
     }
 
     @Override
-    public String getUserEmail() {
+    public String getEmail() {
         return email;
     }
 

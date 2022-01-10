@@ -1,22 +1,24 @@
 package day01;
 
-public class NormalUser implements User {
 
-    private String userEmail;
-    public String password;
+public class NormalUser implements User{
+
+    private String email;
+    private String password;
 
     public NormalUser(String email, String password) {
-        this.userEmail = email;
+        this.email = email;
         this.password = password;
     }
 
     @Override
-    public String getUserEmail() {
-        return userEmail;
+    public String getEmail() {
+        return email;
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return "*".repeat(password.length());
     }
+
 }

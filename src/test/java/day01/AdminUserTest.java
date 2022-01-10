@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdminUserTest {
 
     @Test
-    void testAdminGetters() {
-        User testAdmin = new AdminUser("123@gmail.com", "0000");
+    void testGetPassword(){
+        User user = new AdminUser("bkristof@gmail.com","1234");
 
-        assertEquals("123@gmail.com", testAdmin.getUserEmail());
-        assertEquals("****", testAdmin.getPassword());
+        assertEquals("****",user.getPassword());
     }
+
 }

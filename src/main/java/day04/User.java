@@ -3,33 +3,37 @@ package day04;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class User {
+public class User {
 
-    private String name;
-    private List<Product> products = new ArrayList<>();
-    private int steksz;
+    private String userName;
+    private List<WebShopItem> boughtItems = new ArrayList<>();
+    private int money;
 
-    public User(String name, int steksz) {
-        this.name = name;
-        this.steksz = steksz;
+    public User(String userName, int money) {
+        this.userName = userName;
+        this.money = money;
     }
 
-    public boolean addProduct(Product product) {
-        if (steksz >= product.getPrice()) {
-            return products.add(product);
+
+    public void buy(WebShopItem item){
+        if(item instanceof Product && money>= 3 * item.getPrice()){
+            ((Product) item).addExtraGuarantee(3);
+            money-=item.getPrice()*1.1;
         }
-        return false;
+        money-=item.getPrice();
+        boughtItems.add(item);
     }
 
-    public String getName() {
-        return name;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<WebShopItem> getBoughtItems() {
+        return boughtItems;
     }
 
-    public int getSteksz() {
-        return steksz;
+    public int getMoney() {
+        return money;
     }
 }
